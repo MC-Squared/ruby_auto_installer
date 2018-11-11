@@ -1,28 +1,28 @@
 module RubyAutoInstaller
   module Managers
-    class Asdf
+    class Rbenv
       def self.present?
-        system("asdf --version")
+        system("rbenv version")
       end
 
       def self.update
-        `asdf update`
-        `asdf plugin-update ruby`
+        # Not yet implemented
       end
 
       def self.all_versions
-        `asdf list-all ruby`.lines
+        `rbenv install -l`.lines
       end
 
       def self.installed_versions
-        `asdf list ruby`.lines
+        `rbenv versions`.lines
       end
 
       def self.install(version)
-        system("asdf install ruby #{version}")
+        system("rbenv install ruby #{version}")
       end
 
       def self.refresh
+        system("rbenv rehash")
       end
     end
   end

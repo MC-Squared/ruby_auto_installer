@@ -1,2 +1,4 @@
 #!/usr/bin/env ruby
-puts 'testing'
+require "ruby_auto_installer"
+
+RubyAutoInstaller::CLI.start

@@ -1,25 +1,25 @@
 module RubyAutoInstaller
   module Managers
-    class Asdf
+    class Rvm
       def self.present?
-        system("asdf --version")
+        system("rvm --version")
       end
 
       def self.update
-        `asdf update`
-        `asdf plugin-update ruby`
+        `rvm get stable`
+        `rvm reload`
       end
 
       def self.all_versions
-        `asdf list-all ruby`.lines
+        `rvm list --all`.lines
       end
 
       def self.installed_versions
-        `asdf list ruby`.lines
+        `rvm list`.lines
       end
 
       def self.install(version)
-        system("asdf install ruby #{version}")
+        system("rvm install #{version}")
       end
 
       def self.refresh
