@@ -10,6 +10,7 @@ module RubyAutoInstaller
     method_option :dry_run, aliases: "-d", desc: "List versions that would be installed, but do not install"
     def update
       @verbose = options[:verbose]
+      manager_name = options[:manager_name]
 
       if options[:manager_name].nil?
         debug "Finding manager..."
