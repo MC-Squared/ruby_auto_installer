@@ -97,7 +97,7 @@ module RubyAutoInstaller
                   inject(Object) { |o, c| o.const_get c }
 
       unless manager.present?
-        raise "Failed to load manager #{manager_name}"
+        raise "Failed to load manager #{name}"
       end
 
       manager
