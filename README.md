@@ -23,6 +23,20 @@ Options:
 
 By default only the latest patch version will be installed
 
+## Cron
+
+To run the gem as a cronjob, you can do something like this in your crontab:
+```
+PATH=<output from `echo $PATH`
+
+0 4 * * * /bin/bash -l -c 'ruby_auto_installer update --manager_name=asdf -m 2.1'
+
+```
+
+This will run at 4a.m. every day and install the latest patch version for Ruby 2.1+ (using `asdf` manager).
+
+Customise the above as required.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mc-squared/ruby_auto_installer.
